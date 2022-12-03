@@ -1,4 +1,4 @@
-const licenseInfoLink = {
+const licenseLink = {
   Unlicense: "http://unlicense.org/",
   MIT: "https://www.mit.edu/~amini/LICENSE.md",
   Eclipse: "https://www.eclipse.org/legal/epl-2.0/"
@@ -6,22 +6,23 @@ const licenseInfoLink = {
 
 function renderLicense() {
   if (data.license == 'Unlicense') {
-    return `[![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](${licenseInfoLink})`;
+    return `[![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](${licenseLink})`;
   } else if (data.license == 'MIT') {
-    return `[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](${licenseInfoLink})`;
+    return `[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](${licenseLink})`;
   } else {
-    return `[![License](https://img.shields.io/badge/License-EPL_1.0-red.svg)](${licenseInfoLink})`;
+    return `[![License](https://img.shields.io/badge/License-EPL_1.0-red.svg)](${licenseLink})`;
   }
 }
 
 function generateMarkdown(data) {  
+  const {title, description, installation, usage, contribution, tests, license, github, email} = data;
   readmeTemplate = `
-        # ${data.title}  
+        # ${title}  
         <a name='license'></a>
         ## License  
-        ${renderLicense(data.license)}
+        ${renderLicense(license)}
         ## Description  
-        ${data.description}
+        ${description}
         ## Table of Contents
         * [Installation](#installation)
         * [Usage](#usage)
@@ -30,20 +31,20 @@ function generateMarkdown(data) {
         * [Contact](#contact)
         <a name='installation'></a>
         ## Installation  
-        ${data.installation}
+        ${installation}
         <a name='usage'></a>
         ## Usage  
-        ${data.usage}
+        ${usage}
         <a name='contributions'></a>
         ## Contributions  
-        ${data.contribution}  
+        ${contribution}  
         <a name='tests'></a>
         ## Test Instructions  
-        ${data.tests}        
+        ${tests}        
         <a name='contact'></a>
         ## Contact 
-        * GitHub: https://www.github.com/${data.github}/
-        * Email: ${data.email}`;
+        * GitHub: https://www.github.com/${github}/
+        * Email: ${email}`;
         
   return readmeTemplate;
 }

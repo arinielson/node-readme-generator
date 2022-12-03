@@ -47,7 +47,7 @@ const questions = [
     },    
     {
         type: `input`,
-        name: `gitHub`,
+        name: `github`,
         question: `What is your GitHub username?`,        
         validate: (value) => {if(value){return true}else{return `Please provide a Github username`}}
     },

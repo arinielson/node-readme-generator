@@ -1,43 +1,43 @@
 const questions = [
     {
         type: `input`,
-        name: `Title`,
+        name: `title`,
         question: `What's the project title?`,
         validate: (value) => {if(value){return true}else{return `Please provide a Title`}}
     },
     {
         type: `input`,
-        name: `Description`,
+        name: `description`,
         question: `Please briefly describe your project.`,        
         validate: (value) => {if(value){return true}else{return `Please provide a Description`}}
     },
     {
         type: `input`,
-        name: `Installation`,
+        name: `installation`,
         question: `What are the Installation steps for your project?`,        
         validate: (value) => {if(value){return true}else{return `Please provide Installation steps`}}
     },
     {
         type: `input`,
-        name: `Usage`,
+        name: `usage`,
         question: `What is the Usage information for your project?`,        
         validate: (value) => {if(value){return true}else{return `Please provide Usage information`}}
     },
     {
         type: `input`,
-        name: `Contributing`,
+        name: `contribution`,
         question: `What are the Contribution Guidelines for your project?`,        
         validate: (value) => {if(value){return true}else{return `Please provide Contribution Guidelines`}}
     },
     {
         type: `input`,
-        name: `Tests`,
+        name: `tests`,
         question: `What are the test instructions for your project?`,        
         validate: (value) => {if(value){return true}else{return `Please provide Tests information`}}
     },
     {
         type: `list`,
-        name: `License`,
+        name: `license`,
         question: `Please choose a license:`,        
         choices: [
             `Unlicense`,
@@ -47,13 +47,13 @@ const questions = [
     },    
     {
         type: `input`,
-        name: `GitHub`,
-        question: `What is your GitHub user URL?`,        
-        validate: (value) => {if(value){return true}else{return `Please provide a Github user URL`}}
+        name: `gitHub`,
+        question: `What is your GitHub username?`,        
+        validate: (value) => {if(value){return true}else{return `Please provide a Github username`}}
     },
     {
         type: `input`,
-        name: `Email`,
+        name: `email`,
         question: `What is your email address?`,        
         validate: (value) => {if(value){return true}else{return `Please provide an email`}}
     }

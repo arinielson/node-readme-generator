@@ -1,37 +1,49 @@
-//function renderLicense(license) {}
+const licenseInfoLink = {
+  Unlicense: "http://unlicense.org/",
+  MIT: "https://www.mit.edu/~amini/LICENSE.md",
+  Eclipse: "https://www.eclipse.org/legal/epl-2.0/"
+};
 
-function generateMarkdown(data) {
-  const {Title, Description, Installation, Usage, Contributing, Tests, License, GitHub, Email} = data;
-  const readmeTemplate = `
-        # ${Title}  
+function renderLicense() {
+  if (data.license == 'Unlicense') {
+    return `[![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](${licenseInfoLink})`;
+  } else if (data.license == 'MIT') {
+    return `[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](${licenseInfoLink})`;
+  } else {
+    return `[![License](https://img.shields.io/badge/License-EPL_1.0-red.svg)](${licenseInfoLink})`;
+  }
+}
+
+function generateMarkdown(data) {  
+  readmeTemplate = `
+        # ${data.title}  
+        <a name='license'></a>
+        ## License  
+        ${renderLicense(data.license)}
         ## Description  
-        ${Description}
+        ${data.description}
         ## Table of Contents
         * [Installation](#installation)
         * [Usage](#usage)
         * [Contributions](#contributions)
-        * [Test Instructions](#tests)
-        * [License](#license)
+        * [Test Instructions](#tests)        
         * [Contact](#contact)
         <a name='installation'></a>
         ## Installation  
-        ${Installation}
+        ${data.installation}
         <a name='usage'></a>
         ## Usage  
-        ${Usage}
+        ${data.usage}
         <a name='contributions'></a>
         ## Contributions  
-        ${Contributing}  
+        ${data.contribution}  
         <a name='tests'></a>
         ## Test Instructions  
-        ${Tests}
-        <a name='license'></a>
-        ## License  
-        ${License}
+        ${data.tests}        
         <a name='contact'></a>
         ## Contact 
-        * GitHub: ${GitHub}
-        * Email: ${Email}`;
+        * GitHub: https://www.github.com/${data.github}/
+        * Email: ${data.email}`;
         
   return readmeTemplate;
 }

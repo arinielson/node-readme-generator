@@ -2,7 +2,7 @@
 
 ## Description
 
-...
+Using Node.JS you can create a README.md file by answering the prompted questions.
 
 
 ## User Story
@@ -35,11 +35,11 @@ THEN I am taken to the corresponding section of the README
 
 ## Getting Started
 
-...
+Clone the SSH link from my GitHub repo. Once the file is open start the terminal & enter 'npm i'. Then use 'node index.js' to start the prompts.
 
 ## Mock-Up
 
-The following video shows the functionality:
+Please follow the video for usage instruction/ functionality:
 
 ![Video showing the functionality of the node.js readme generator](./assets/FILENAME)
 

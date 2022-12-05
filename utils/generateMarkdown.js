@@ -16,7 +16,7 @@ function renderLicense() {
 
 function generateMarkdown(data) {  
   const {title, description, installation, usage, contribution, tests, license, github, email} = data;
-  readmeTemplate = `
+  const readmeTemplate = `
         # ${title}  
         <a name='license'></a>
         ## License  

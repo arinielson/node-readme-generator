@@ -1,7 +1,7 @@
 {
   "name": "static-site",
   "version": "1.0.0",
-  "description": "",
+  "description": "Using Node.JS you can create a README.md file by answering the prompted questions.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,5 +10,15 @@
   "license": "ISC",
   "dependencies": {
     "inquirer": "8.2.4"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arinielson/node-readme-generator.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/arinielson/node-readme-generator/issues"
+  },
+  "homepage": "https://github.com/arinielson/node-readme-generator#readme"
 }
